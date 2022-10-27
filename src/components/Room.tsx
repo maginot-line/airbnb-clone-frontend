@@ -19,8 +19,8 @@ export default function Room() {
                     <Text display={"block"} as={"b"} noOfLines={1} fontSize={"md"}>
                         Cheomdangwahak-ro, Jeongeup-si, North Jeolla Province, South Korea
                     </Text>
-                    <HStack spacing={1}>
-                        <FaStar size={15} />
+                    <HStack _hover={{ color: "red.100" }} spacing={1}>
+                        <FaStar size={12} />
                         <Text fontSize={"sm"}>4.97</Text>
                     </HStack>
                 </Grid>

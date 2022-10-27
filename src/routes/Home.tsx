@@ -1,5 +1,5 @@
-import { Grid } from "@chakra-ui/react";
-import Room from "../components/Room";
+import { Box, Grid } from "@chakra-ui/react";
+import RoomSkeleton from "../components/RoomSkeleton";
 
 export default function Home() {
     return (
@@ -10,9 +10,9 @@ export default function Home() {
             rowGap={8}
             templateColumns={{ sm: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3,1fr)", xl: "repeat(4,1fr)", "2xl": "repeat(5,1fr)" }}
         >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((index) => (
-                <Room key={index} />
-            ))}
+            <Box>
+                <RoomSkeleton />
+            </Box>
         </Grid>
     );
 }
