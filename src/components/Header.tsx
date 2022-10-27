@@ -10,7 +10,7 @@ export default function Header() {
     const logoColor = useColorModeValue("red.500", "red.200");
     const Icon = useColorModeValue(FaMoon, FaSun);
     return (
-        <HStack px={10} py={5} borderBottomWidth={1} justifyContent={"space-between"}>
+        <HStack px={40} py={5} borderBottomWidth={1} justifyContent={"space-between"}>
             <Box color={logoColor}>
                 <FaAirbnb size={48} />
             </Box>
