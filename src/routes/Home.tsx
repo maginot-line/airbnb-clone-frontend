@@ -33,7 +33,7 @@ export default function Home() {
             {isLoading ? (
                 <>
                     {[...Array(10)].map((_, i) => (
-                        <RoomSkeleton />
+                        <RoomSkeleton key={i} />
                     ))}
                 </>
             ) : null}
