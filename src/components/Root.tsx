@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Header from "./Header";
 
 export default function Root() {
@@ -7,6 +8,7 @@ export default function Root() {
         <Box>
             <Header />
             <Outlet />
+            <ReactQueryDevtools />
         </Box>
     );
 }
