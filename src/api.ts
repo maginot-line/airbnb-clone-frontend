@@ -21,3 +21,6 @@ export const getMe = () => instance.get("users/me").then((response) => response.
 
 export const logOut = () =>
     instance.post("users/log-out", null, { headers: { "X-CSRFToken": Cookie.get("csrftoken") || "" } }).then((response) => response.data);
+
+export const githubLogin = (code: string) =>
+    instance.post("users/github", { code }, { headers: { "X-CSRFToken": Cookie.get("csrftoken") || "" } }).then((response) => response.status);
