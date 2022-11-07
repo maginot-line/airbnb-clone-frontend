@@ -17,3 +17,5 @@ export const getRoomReviews = ({ queryKey }: QueryFunctionContext) => {
 };
 
 export const getMe = () => instance.get("users/me").then((response) => response.data);
+
+export const logOut = () => instance.post("users/logout").then((response) => response.data);
