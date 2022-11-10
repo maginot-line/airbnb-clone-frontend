@@ -16,7 +16,7 @@ import {
 import { useMutation, UseMutationResult, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { FaLock, FaUserNinja } from "react-icons/fa";
-import { IUsernameLoginError, IUsernameLoginSuccess, IUsernameLoginVariables, usernameLogin } from "../api";
+import { IUsernameLoginError, IUsernameLoginSuccess, IUsernameLoginVariables, usernameLogIn } from "../api";
 import SocialLogin from "./SocialLogin";
 
 interface LoginModalProps {
@@ -37,12 +37,15 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
     } = useForm<IForm>();
     const toast = useToast();
     const queryClient = useQueryClient();
-    const mutation: UseMutationResult<IUsernameLoginSuccess, IUsernameLoginError, IUsernameLoginVariables, unknown> = useMutation(usernameLogin, {
+    const mutation = useMutation(usernameLogIn, {
         onMutate: () => {
             console.log("mutation starting");
         },
         onSuccess: (data) => {
-            toast({ title: "welcome back", status: "success" });
+            toast({
+                title: "welcome back!",
+                status: "success",
+            });
             onClose();
             queryClient.refetchQueries(["me"]);
         },

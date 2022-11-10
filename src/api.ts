@@ -41,5 +41,5 @@ export const githubLogin = (code: string) =>
 export const kakaoLogin = (code: string) =>
     instance.post("users/kakao", { code }, { headers: { "X-CSRFToken": Cookie.get("csrftoken") || "" } }).then((response) => response.status);
 
-export const usernameLogin = ({ username, password }: IUsernameLoginVariables) =>
+export const usernameLogIn = ({ username, password }: IUsernameLoginVariables) =>
     instance.post("users/log-in", { username, password }, { headers: { "X-CSRFToken": Cookie.get("csrftoken") || "" } }).then((response) => response.data);
