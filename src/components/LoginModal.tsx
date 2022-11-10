@@ -40,9 +40,6 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
     const toast = useToast();
     const queryClient = useQueryClient();
     const mutation = useMutation(usernameLogIn, {
-        onMutate: () => {
-            console.log("mutation starting");
-        },
         onSuccess: (data) => {
             toast({
                 title: "welcome back!",

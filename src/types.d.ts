@@ -63,3 +63,10 @@ export interface IUser {
     language: string;
     currency: string;
 }
+
+export interface ISignIn {
+    name: string;
+    email: string;
+    username: string;
+    password: string;
+}

@@ -2,6 +2,7 @@
 import { QueryFunctionContext } from "@tanstack/react-query";
 import axios from "axios";
 import Cookie from "js-cookie";
+import { ISignIn } from "./types";
 
 export interface IUsernameLoginVariables {
     username: string;
@@ -43,3 +44,8 @@ export const kakaoLogin = (code: string) =>
 
 export const usernameLogIn = ({ username, password }: IUsernameLoginVariables) =>
     instance.post("users/log-in", { username, password }, { headers: { "X-CSRFToken": Cookie.get("csrftoken") || "" } }).then((response) => response.data);
+
+export const signIn = ({ name, email, username, password }: ISignIn) =>
+    instance
+        .post("users/sign-in", { name, email, username, password }, { headers: { "X-CSRFToken": Cookie.get("csrftoken") || "" } })
+        .then((response) => response.data);
